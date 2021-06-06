@@ -1,8 +1,9 @@
 FROM ubuntu:20.04
 
 #Required for tzdata
-ENV TZ=Europe/Amsterdam
+ENV TZ=Asia/Shanghai
 RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+RUN sed -i "s/archive.ubuntu.com/mirrors.aliyun.com/g" /etc/apt/sources.list
 
 # Install dependencies
 RUN apt-get update

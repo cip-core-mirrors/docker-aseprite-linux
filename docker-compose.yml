@@ -2,6 +2,7 @@ version: '2'
 
 services:
   installer:
+    container_name: docker-aseprite-linux-installer
     build: .
     volumes:
     - ./output:/output
